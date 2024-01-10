@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="./js/script.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6"
+      crossorigin="anonymous"
+    />
+
+    <title>Landing Page</title>
+  </head>
+  <body>
+    <section class="showcase">
+      <div class="video-container">
+        <video id="myVideo" src="./Vedio/vedio1.mp4" autoplay loop></video>
+      </div>
+
+      <div onclick="changeImmageAddress()" class="content mx-0 p-0 p-md-5">
+        <i class="far fa-times-circle mt-3 mx-3"></i>
+        <img src="./Images/" alt="" />
+        <img src="./Images/logo.png" alt="" />
+        <div>
+          <div class="icons mt-2">
+            <img class="mx-1 mt" src="./Images/instagram.svg" alt="" />
+            <img class="mx-1" src="./Images/facebook.svg" alt="" />
+          </div>
+        </div>
+        <div class="mails mt-3">
+          <img src="./Images/email.svg" alt="" />
+          <span>info@importsBykiara.com</span>
+          <img src="./Images/phone.svg" alt="" /><span>+7832 2384723</span>
+        </div>
+        <div class="address mt-2 text-center">
+          <p>
+            Diamond Plaza II ground <br />
+            Floor Fourth AVM Park-lands <br />Niarobi kenya
+          </p>
+        </div>
+        <h4 class="">Get notified when we launch</h4>
+        <div class="container mx-sm-0 mt-4 inputs d-flex">
+          <input
+            onclick="changeText1()"
+            type="radio"
+            class="mx-1 btn-check inp-1"
+            name="options-outlined"
+            id="success-outlined"
+            autocomplete="off"
+            checked
+          />
+          <label id="label-1" class="mx-1 btn btn-outline-light border border-dark rounded-pill w-50" for="success-outlined"
+            ><span class="text-dark float-start mt-1">SMS</span><img id="image-1" class="float-end" src="./Images/check2.svg"
+          /></label>
+
+          <input onclick="changeText2()" type="radio" class="btn-check" name="options-outlined" id="danger-outlined" autocomplete="off" />
+          <label id="label-2" class="mx-1 btn btn-outline-light border border-dark rounded-pill w-50" for="danger-outlined"
+            ><span class="float-start mt-1 text-dark">Email</span><img id="image-2" class="float-end" src="./Images/check.svg"
+          /></label>
+        </div>
+        <div>
+          <input id="input-3" class="inp-3 border border-dark rounded-pill p-2 mx-2 my-3" type="text" placeholder="Your Number " />
+        </div>
+      </div>
+      <img class="footer-images" onclick="unmuted()" src="./Images/unmuted.svg" alt="" />
+      <img class="footer-images mx-5" onclick="muted()" src="./Images/muted.svg" alt="" />
+    </section>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      var video = document.getElementById("myVideo")
+      function changeImmageAddress() {
+        if (video.paused) {
+          video.play()
+        } else {
+          video.pause()
+          image.src = "./Images/unmuted.svg"
+        }
+      }
+      function changeText1() {
+        var image_1 = document.getElementById("image-1")
+        var image_2 = document.getElementById("image-2")
+        var input_3 = document.getElementById("input-3")
+        input_3.placeholder = "Your Number"
+        if (document.querySelectorAll(".inputs input")[0].checked) {
+          image_1.src = "./Images/check2.svg"
+          image_2.src = "./Images/check.svg"
+        }
+      }
+      function changeText2() {
+        var image_2 = document.getElementById("image-2")
+        var image_1 = document.getElementById("image-1")
+        var input_3 = document.getElementById("input-3")
+        input_3.placeholder = "Your Email"
+        if (document.querySelectorAll(".inputs input")[1].checked) {
+          image_2.src = "./Images/check2.svg"
+          image_1.src = "./Images/check.svg"
+        }
+      }
+
+      function muted() {
+        document.getElementById("myVideo").muted = true
+      }
+      function unmuted() {
+        document.getElementById("myVideo").muted = false
+      }
+    </script>
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <s src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js" integrity="sha384-SR1sx49pcuLnqZUnnPwx6FCym0wLsk5JZuNx2bPPENzswTNFaQU1RDvt3wT4gWFG" crossorigin="anonymous"></s>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js" integrity="sha384-j0CNLUeiqtyaRmlzUHCPZ+Gy5fQu0dQ6eZ/xAww941Ai1SxSY+0EQqNXNE6DZiVc" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
